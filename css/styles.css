@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Taste of Africa — Main Stylesheet
+   Description: Global styles for the Taste of Africa website.
+   Sections:
+     1. CSS Variables (colour palette, fonts)
+     2. Reset
+     3. Base typography
+   ========================================================================== */
+
+/* 1. CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Warm yellows */
+  --color-saffron: #f4a300;
+  --color-gold: #e8b923;
+  --color-sun: #ffd166;
+
+  /* Deep reds */
+  --color-hibiscus: #a4161a;
+  --color-pepper: #c1272d;
+  --color-clay-red: #8b1e1e;
+
+  /* Earthy browns */
+  --color-earth: #5c3a21;
+  --color-cocoa: #3e2415;
+  --color-sand: #f5e6cc;
+
+  /* Neutrals */
+  --color-cream: #fffaf0;
+  --color-text: #2b1a10;
+
+  /* Fonts */
+  --font-heading: "Abril Fatface", Georgia, serif;
+  --font-body: "Nunito", "Segoe UI", Arial, sans-serif;
+}
+
+/* 2. Reset
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+/* 3. Base typography
+   -------------------------------------------------------------------------- */
+html {
+  font-size: 100%; /* 16px base */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-cream);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 400; /* Abril Fatface is already heavy */
+  line-height: 1.2;
+  color: var(--color-hibiscus);
+}
