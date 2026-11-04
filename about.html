@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about the Taste of Africa project.">
+  <meta name="description" content="Learn about the Taste of Africa mission and the history of African cuisine.">
   <title>About | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface (headings) + Nunito (body) -->
@@ -15,6 +15,7 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,108 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
   <main>
-    <!-- Page content coming in next phase -->
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <h1>About Taste of Africa</h1>
+      <p>A celebration of the people, places and recipes behind Africa's kitchens.</p>
+    </section>
+
+    <!-- ===== Mission statement ===== -->
+    <section class="mission" aria-labelledby="mission-title">
+      <h2 id="mission-title">Our Mission</h2>
+      <blockquote>
+        <p>
+          To celebrate and protect Africa's food heritage by sharing its recipes, stories and
+          traditions, so that every dish is cooked, understood and passed on to the next
+          generation.
+        </p>
+      </blockquote>
+      <ul class="mission-points">
+        <li><strong>Preserve</strong> traditional recipes and techniques.</li>
+        <li><strong>Educate</strong> people about where African dishes come from.</li>
+        <li><strong>Inspire</strong> home cooks everywhere to try African flavours.</li>
+      </ul>
+    </section>
+
+    <!-- ===== History of African cuisine ===== -->
+    <section class="section" aria-labelledby="history-title">
+      <h2 id="history-title">A Brief History of African Cuisine</h2>
+
+      <div class="history-layout">
+        <figure class="history-image">
+          <img src="images/about-cooking.jpg" alt="Women cooking together over an open fire in a village kitchen" loading="lazy">
+          <figcaption>Cooking has always been a shared, social activity across Africa.</figcaption>
+        </figure>
+
+        <div class="history-text">
+          <article>
+            <h3>Ancient Roots</h3>
+            <p>
+              Africa is home to some of the world's oldest farmed foods. <mark>Sorghum</mark>,
+              <mark>pearl millet</mark>, <mark>teff</mark>, <mark>fonio</mark>, African rice,
+              yams and black-eyed peas were all first cultivated on the continent.
+              <strong>Coffee</strong> comes from the highlands of Ethiopia.
+            </p>
+          </article>
+
+          <article>
+            <h3>Trade and Exchange</h3>
+            <p>
+              Trade across the Sahara, the Indian Ocean and the Mediterranean brought new spices
+              and ideas. Later, maize, cassava, peanuts, tomatoes and chillies arrived from the
+              Americas. African cooks made them their own, and today they are at the heart of
+              dishes like jollof rice and isombe.
+            </p>
+          </article>
+
+          <article>
+            <h3>Global Influence</h3>
+            <p>
+              Enslaved Africans carried seeds, skills and recipes across the Atlantic. Their
+              influence lives on in American Southern food, Caribbean cooking and Brazilian
+              cuisine: think gumbo, rice and peas, and <em>acarajé</em>. Today, African
+              restaurants and chefs are winning fans in cities all over the world.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Map: cultural food landmark in Kigali ===== -->
+    <section class="section section-alt" aria-labelledby="map-title">
+      <h2 id="map-title">Visit a Food Landmark: Kimironko Market, Kigali</h2>
+      <p>
+        Kimironko Market is one of Kigali's busiest markets. It is a great place to see Rwandan
+        food culture up close, with stalls of fresh produce, <mark>cassava leaves</mark> for
+        isombe, beans, spices and colourful fabrics.
+      </p>
+      <div class="map-wrapper">
+        <iframe src="https://maps.google.com/maps?q=Kimironko+Market,+Kigali,+Rwanda&amp;z=15&amp;output=embed"
+                title="Map of Kimironko Market in Kigali, Rwanda"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
