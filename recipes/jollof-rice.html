@@ -15,6 +15,7 @@
   <script src="../js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="../index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,151 @@
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
-  <main>
-    <!-- Page content coming in next phase -->
+  <main class="recipe-page">
+    <!-- ===== Recipe intro: name, image, culture ===== -->
+    <article class="recipe">
+      <header class="recipe-header">
+        <p class="breadcrumb"><a href="../recipes.html">Recipes</a> / West Africa</p>
+        <h1>Jollof Rice</h1>
+        <button type="button" class="favorite-btn" data-id="jollof-rice">❤️ Favorite</button>
+      </header>
+
+      <figure class="recipe-image">
+        <img src="../images/jollof-rice.jpg" alt="A plate of bright red-orange Jollof rice served with fried plantain and grilled chicken">
+        <figcaption>Jollof rice is served at almost every West African party and celebration.</figcaption>
+      </figure>
+
+      <section class="recipe-culture" aria-labelledby="culture-title">
+        <h2 id="culture-title">The Story Behind the Dish</h2>
+        <p>
+          Jollof rice traces its roots to the <strong>Wolof people</strong> of the Senegambia
+          region, where a similar dish, <em>thieboudienne</em>, is still a national favourite. It
+          spread across West Africa and every country made it its own. Today it is cooked from
+          Senegal to Cameroon.
+        </p>
+        <p>
+          The dish is famous for the friendly <strong>"Jollof Wars"</strong>, a long-running
+          debate (mostly between Nigeria and Ghana) over who makes it best. Nigerian cooks often
+          use long-grain parboiled rice, while Ghanaians tend to prefer fragrant
+          <mark>basmati</mark>. Everyone agrees on one thing: the prized smoky
+          <mark>"party" flavour</mark> comes from letting the bottom of the pot lightly
+          <mark>toast</mark>.
+        </p>
+      </section>
+
+      <aside class="recipe-facts" aria-label="Recipe quick facts">
+        <ul>
+          <li><strong>Origin:</strong> Senegambia, West Africa</li>
+          <li><strong>Prep:</strong> 20 min</li>
+          <li><strong>Cook:</strong> 50 min</li>
+          <li><strong>Difficulty:</strong> Medium</li>
+        </ul>
+      </aside>
+
+      <!-- ===== Ingredients with servings scaler ===== -->
+      <section class="ingredients" aria-labelledby="ingredients-title">
+        <h2 id="ingredients-title">Ingredients</h2>
+        <div class="scaler">
+          <label for="servings">Servings:</label>
+          <input type="number" id="servings" min="1" max="50" value="6" data-base-servings="6">
+        </div>
+        <ul class="ingredient-list">
+          <li><span class="qty" data-qty="3">3</span> cups long-grain parboiled rice</li>
+          <li><span class="qty" data-qty="4">4</span> large <mark>tomatoes</mark></li>
+          <li><span class="qty" data-qty="2">2</span> red bell peppers</li>
+          <li><span class="qty" data-qty="1">1</span> <mark>scotch bonnet</mark> pepper (adjust to taste)</li>
+          <li><span class="qty" data-qty="2">2</span> medium onions</li>
+          <li><span class="qty" data-qty="3">3</span> tbsp tomato paste</li>
+          <li><span class="qty" data-qty="0.5">0.5</span> cup vegetable oil</li>
+          <li><span class="qty" data-qty="3">3</span> cups chicken stock</li>
+          <li><span class="qty" data-qty="1">1</span> tsp dried <mark>thyme</mark></li>
+          <li><span class="qty" data-qty="1">1</span> tsp <mark>curry powder</mark></li>
+          <li><span class="qty" data-qty="2">2</span> <mark>bay leaves</mark></li>
+          <li><span class="qty" data-qty="1">1</span> tsp salt</li>
+        </ul>
+      </section>
+
+      <!-- ===== Cooking steps ===== -->
+      <section class="steps" aria-labelledby="steps-title">
+        <h2 id="steps-title">Method</h2>
+        <details open>
+          <summary>Show cooking steps</summary>
+          <ol>
+            <li><mark>Blend</mark> the tomatoes, bell peppers, scotch bonnet and one onion until smooth.</li>
+            <li>Slice the second onion and <mark>fry</mark> it in the oil over medium heat until soft and golden.</li>
+            <li>Stir in the tomato paste and fry for 3–4 minutes until it darkens slightly.</li>
+            <li>Pour in the blended pepper mix. <mark>Simmer</mark> uncovered for 20–25 minutes, stirring often, until the sauce thickens and the oil rises to the top.</li>
+            <li>Add the stock, thyme, curry powder, bay leaves and salt. Bring to a boil.</li>
+            <li>Rinse the rice until the water runs clear, then stir it into the pot.</li>
+            <li>Cover tightly (a layer of foil under the lid helps) and <mark>steam</mark> on low heat for 25–30 minutes without stirring.</li>
+            <li>For the smoky "party" flavour, turn up the heat for the last 2–3 minutes so the base gently toasts. Fluff and serve.</li>
+          </ol>
+        </details>
+      </section>
+
+      <!-- ===== Video tutorial ===== -->
+      <section class="recipe-video" aria-labelledby="video-title">
+        <h2 id="video-title">Watch &amp; Cook</h2>
+        <div class="video-wrapper">
+          <!-- TODO: replace with real YouTube video ID -->
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                  title="Video tutorial: how to make Jollof Rice"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <!-- ===== Nutrition table ===== -->
+      <section class="nutrition" aria-labelledby="nutrition-title">
+        <h2 id="nutrition-title">Nutritional Facts</h2>
+        <table>
+          <caption>Approximate values per serving (1 of 6)</caption>
+          <thead>
+            <tr><th scope="col">Nutrient</th><th scope="col">Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Calories</th><td>420 kcal</td></tr>
+            <tr><th scope="row">Carbohydrates</th><td>68 g</td></tr>
+            <tr><th scope="row">Protein</th><td>8 g</td></tr>
+            <tr><th scope="row">Fat</th><td>13 g</td></tr>
+            <tr><th scope="row">Fibre</th><td>4 g</td></tr>
+            <tr><th scope="row">Sodium</th><td>650 mg</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== Map of country of origin ===== -->
+      <section class="recipe-map" aria-labelledby="map-title">
+        <h2 id="map-title">Where It's From</h2>
+        <p>Jollof is cooked across West Africa, but Nigeria and Ghana are at the heart of the Jollof Wars.</p>
+        <div class="map-wrapper">
+          <iframe src="https://maps.google.com/maps?q=Nigeria&amp;z=5&amp;output=embed"
+                  title="Map of Nigeria, West Africa"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+    </article>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
