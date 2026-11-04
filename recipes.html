@@ -15,6 +15,7 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,126 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
   <main>
-    <!-- Page content coming in next phase -->
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <h1>Recipes</h1>
+      <p>
+        Classic dishes from every corner of Africa. Filter by region, then tap
+        <strong>❤️ Favorite</strong> to save the ones you want to cook. Your favorites stay
+        saved in this browser.
+      </p>
+    </section>
+
+    <!-- ===== Region filter buttons ===== -->
+    <section class="section" aria-labelledby="recipe-list-title">
+      <h2 id="recipe-list-title" class="visually-hidden">Recipe list</h2>
+
+      <div class="filter-bar" role="group" aria-label="Filter recipes by region">
+        <button type="button" class="filter-btn active" data-region="all">All</button>
+        <button type="button" class="filter-btn" data-region="west-africa">West Africa</button>
+        <button type="button" class="filter-btn" data-region="east-africa">East Africa</button>
+        <button type="button" class="filter-btn" data-region="north-africa">North Africa</button>
+        <button type="button" class="filter-btn" data-region="southern-africa">Southern Africa</button>
+      </div>
+
+      <!-- ===== Recipe cards ===== -->
+      <div class="card-grid">
+        <article class="card recipe-card" data-region="west-africa" data-id="jollof-rice">
+          <figure>
+            <img src="images/jollof-rice.jpg" alt="A plate of bright red-orange Jollof rice served with fried plantain and grilled chicken" loading="lazy">
+            <figcaption class="card-tag">West Africa</figcaption>
+          </figure>
+          <div class="card-body">
+            <h3>Jollof Rice</h3>
+            <p>Long-grain rice <mark>simmered</mark> in a smoky tomato, onion and <mark>scotch bonnet</mark> sauce.</p>
+            <div class="card-actions">
+              <a href="recipes/jollof-rice.html" class="card-link">View recipe →</a>
+              <button type="button" class="favorite-btn" data-id="jollof-rice">❤️ Favorite</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card recipe-card" data-region="north-africa" data-id="tagine">
+          <figure>
+            <img src="images/tagine.jpg" alt="Chicken tagine with olives and preserved lemon in a conical clay pot" loading="lazy">
+            <figcaption class="card-tag">North Africa</figcaption>
+          </figure>
+          <div class="card-body">
+            <h3>Tagine</h3>
+            <p>Chicken <mark>slow-cooked</mark> with <mark>preserved lemon</mark>, olives and warm spices.</p>
+            <div class="card-actions">
+              <a href="recipes/tagine.html" class="card-link">View recipe →</a>
+              <button type="button" class="favorite-btn" data-id="tagine">❤️ Favorite</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card recipe-card" data-region="east-africa" data-id="injera">
+          <figure>
+            <img src="images/injera.jpg" alt="Spongy injera flatbread topped with colourful Ethiopian stews" loading="lazy">
+            <figcaption class="card-tag">East Africa</figcaption>
+          </figure>
+          <div class="card-body">
+            <h3>Injera</h3>
+            <p>A spongy sourdough flatbread made from <mark>fermented</mark> <mark>teff</mark> flour.</p>
+            <div class="card-actions">
+              <a href="recipes/injera.html" class="card-link">View recipe →</a>
+              <button type="button" class="favorite-btn" data-id="injera">❤️ Favorite</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card recipe-card" data-region="southern-africa" data-id="bunny-chow">
+          <figure>
+            <img src="images/bunny-chow.jpg" alt="A hollowed-out loaf of white bread filled with spicy curry" loading="lazy">
+            <figcaption class="card-tag">Southern Africa</figcaption>
+          </figure>
+          <div class="card-body">
+            <h3>Bunny Chow</h3>
+            <p>Durban's famous street food: a hollowed bread loaf filled with <mark>curry</mark>.</p>
+            <div class="card-actions">
+              <a href="recipes/bunny-chow.html" class="card-link">View recipe →</a>
+              <button type="button" class="favorite-btn" data-id="bunny-chow">❤️ Favorite</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card recipe-card" data-region="east-africa" data-id="isombe">
+          <figure>
+            <img src="images/isombe.jpg" alt="A bowl of dark green Isombe, Rwandan cassava leaf stew" loading="lazy">
+            <figcaption class="card-tag">East Africa</figcaption>
+          </figure>
+          <div class="card-body">
+            <h3>Isombe</h3>
+            <p>Rwanda's stew of <mark>pounded</mark> <mark>cassava leaves</mark>, eggplant and peanut butter.</p>
+            <div class="card-actions">
+              <a href="recipes/isombe.html" class="card-link">View recipe →</a>
+              <button type="button" class="favorite-btn" data-id="isombe">❤️ Favorite</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
