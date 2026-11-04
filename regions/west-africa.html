@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the flavours of West African cuisine.">
+  <meta name="description" content="Discover the flavours, staples and cooking techniques of West African cuisine.">
   <title>West Africa | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface (headings) + Nunito (body) -->
@@ -15,6 +15,7 @@
   <script src="../js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="../index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,105 @@
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
-  <main>
-    <!-- Page content coming in next phase -->
+  <main class="region-page">
+    <!-- ===== Region intro ===== -->
+    <section class="page-intro">
+      <p class="breadcrumb"><a href="../regions.html">Regions</a> / West Africa</p>
+      <h1>West Africa</h1>
+      <figure class="region-banner">
+        <img src="../images/west-africa.jpg" alt="A busy West African market stall piled with tomatoes, peppers and onions">
+        <figcaption>Open-air markets are the beating heart of West African cooking.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ===== Food culture ===== -->
+    <section class="section" aria-labelledby="culture-title">
+      <h2 id="culture-title">Food Culture</h2>
+      <p>
+        From Senegal to Nigeria, West African food is bold, generous and made to share. Meals
+        often centre on a starchy staple served with a rich, spicy soup or stew. Large pots are
+        cooked for the whole family, and at weddings and festivals no table is complete without
+        a big tray of <mark>jollof rice</mark>.
+      </p>
+      <p>
+        Many of the region's flavours travelled across the Atlantic. Okra, black-eyed peas and
+        one-pot rice cooking shaped dishes such as gumbo and jambalaya in the Americas.
+      </p>
+    </section>
+
+    <!-- ===== Staples and techniques ===== -->
+    <section class="section section-alt two-col" aria-label="Staples and cooking techniques">
+      <article>
+        <h2>Staple Ingredients</h2>
+        <ul class="feature-list">
+          <li><strong>Grains:</strong> rice, millet, sorghum and <mark>fonio</mark></li>
+          <li><strong>Roots &amp; tubers:</strong> yam, cassava and cocoyam</li>
+          <li><strong>Plantains:</strong> fried as <em>dodo</em> or <em>kelewele</em></li>
+          <li><strong>Seeds &amp; nuts:</strong> groundnuts and <mark>egusi</mark> (melon seeds)</li>
+          <li><strong>Flavour:</strong> <mark>scotch bonnet</mark>, <mark>palm oil</mark>, ginger and dried fish</li>
+        </ul>
+      </article>
+      <article>
+        <h2>Cooking Techniques</h2>
+        <ul class="feature-list">
+          <li><mark>Pounding</mark>: boiled yam or cassava is pounded into smooth <em>fufu</em>.</li>
+          <li><mark>Stewing</mark>: tomato-and-pepper bases are cooked down slowly until rich.</li>
+          <li><mark>Grilling</mark>: spiced <em>suya</em> skewers are cooked over open flames.</li>
+          <li><mark>Smoking</mark> and <mark>drying</mark>: fish is preserved to add deep, savoury flavour.</li>
+          <li><mark>Fermenting</mark>: locust beans become <em>dawadawa</em>, a powerful seasoning.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ===== Signature dishes ===== -->
+    <section class="section" aria-labelledby="dishes-title">
+      <h2 id="dishes-title">Signature Dishes</h2>
+      <div class="card-grid">
+        <figure class="card">
+          <img src="../images/jollof-rice.jpg" alt="A plate of bright red-orange Jollof rice served with fried plantain and grilled chicken" loading="lazy">
+          <figcaption>
+            <h3>Jollof Rice</h3>
+            <p>The region's most famous dish: rice cooked in a smoky tomato-pepper sauce.</p>
+            <a href="../recipes/jollof-rice.html" class="card-link">View recipe →</a>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="also-try">
+        <strong>Also try:</strong> egusi soup, suya, waakye, thieboudienne and groundnut stew.
+      </p>
+    </section>
+
+    <!-- ===== Video ===== -->
+    <section class="section section-alt" aria-labelledby="video-title">
+      <h2 id="video-title">Taste West Africa</h2>
+      <div class="video-wrapper">
+        <!-- TODO: replace with real YouTube video ID -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                title="Video: exploring West African food"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </section>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
