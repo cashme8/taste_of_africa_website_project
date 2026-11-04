@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore African cuisine by region.">
+  <meta name="description" content="Explore African cuisine by region: West, North and East Africa.">
   <title>Regions | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface (headings) + Nunito (body) -->
@@ -15,6 +15,7 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,104 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
   <main>
-    <!-- Page content coming in next phase -->
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <h1>Africa's Culinary Regions</h1>
+      <p>
+        Africa has 54 countries and thousands of food traditions. Climate, crops, trade routes
+        and history have shaped very different kitchens. Rice and fiery stews dominate the West,
+        <mark>couscous</mark> and warm spices the North, and <mark>teff</mark>, plantains and
+        leafy stews the East.
+      </p>
+    </section>
+
+    <!-- ===== Region cards ===== -->
+    <section class="section" aria-labelledby="region-cards-title">
+      <h2 id="region-cards-title">Choose a Region</h2>
+
+      <div class="card-grid card-grid-3">
+        <article class="card region-card">
+          <img src="images/west-africa.jpg" alt="A busy West African market stall piled with tomatoes, peppers and onions" loading="lazy">
+          <div class="card-body">
+            <h3>West Africa</h3>
+            <p>
+              Tomato and pepper stews, rice dishes and pounded staples like <mark>fufu</mark>,
+              with plenty of <mark>scotch bonnet</mark> heat.
+            </p>
+            <p class="card-countries">Nigeria · Ghana · Senegal · Côte d'Ivoire</p>
+            <a href="regions/west-africa.html" class="card-link">Explore West Africa →</a>
+          </div>
+        </article>
+
+        <article class="card region-card">
+          <img src="images/north-africa.jpg" alt="Pyramids of colourful spices at a North African souk" loading="lazy">
+          <div class="card-body">
+            <h3>North Africa</h3>
+            <p>
+              Steamed <mark>couscous</mark>, slow-cooked tagines, olives, dates and fragrant blends
+              like <mark>ras el hanout</mark>.
+            </p>
+            <p class="card-countries">Morocco · Algeria · Tunisia · Egypt</p>
+            <a href="regions/north-africa.html" class="card-link">Explore North Africa →</a>
+          </div>
+        </article>
+
+        <article class="card region-card">
+          <img src="images/east-africa.jpg" alt="A shared Ethiopian meal of injera and stews on a large round platter" loading="lazy">
+          <div class="card-body">
+            <h3>East Africa</h3>
+            <p>
+              <mark>Fermented</mark> teff injera, <mark>berbere</mark>-spiced stews, plantains
+              and leafy dishes like Rwandan isombe.
+            </p>
+            <p class="card-countries">Ethiopia · Rwanda · Kenya · Tanzania</p>
+            <a href="regions/east-africa.html" class="card-link">Explore East Africa →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Other regions (no dedicated page yet) ===== -->
+    <section class="section section-alt" aria-labelledby="more-regions-title">
+      <h2 id="more-regions-title">Beyond These Three</h2>
+      <div class="two-col">
+        <article>
+          <h3>Southern Africa</h3>
+          <p>
+            Known for <mark>braai</mark> (barbecue) culture, maize porridge such as pap and
+            sadza, and dishes shaped by many cultures, like Durban's
+            <a href="recipes/bunny-chow.html">Bunny Chow</a>.
+          </p>
+        </article>
+        <article>
+          <h3>Central Africa</h3>
+          <p>
+            A land of rainforest ingredients: <mark>cassava</mark>, plantain, groundnuts and
+            leafy greens, often slow-cooked in rich palm-oil sauces such as moambe.
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
