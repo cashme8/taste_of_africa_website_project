@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the flavours of East African cuisine.">
+  <meta name="description" content="Discover the flavours, staples and cooking techniques of East African cuisine.">
   <title>East Africa | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface (headings) + Nunito (body) -->
@@ -15,6 +15,7 @@
   <script src="../js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="../index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,117 @@
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
-  <main>
-    <!-- Page content coming in next phase -->
+  <main class="region-page">
+    <!-- ===== Region intro ===== -->
+    <section class="page-intro">
+      <p class="breadcrumb"><a href="../regions.html">Regions</a> / East Africa</p>
+      <h1>East Africa</h1>
+      <figure class="region-banner">
+        <img src="../images/east-africa.jpg" alt="A shared Ethiopian meal of injera and stews on a large round platter">
+        <figcaption>In much of East Africa, meals are eaten together from one shared platter.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ===== Food culture ===== -->
+    <section class="section" aria-labelledby="culture-title">
+      <h2 id="culture-title">Food Culture</h2>
+      <p>
+        East Africa stretches from the Ethiopian highlands to the Great Lakes and the Swahili
+        coast, and its food is just as varied. In <strong>Ethiopia</strong>, meals are served on
+        injera and eaten by hand. <strong>Ethiopia is also the birthplace of coffee</strong>, and
+        the coffee ceremony is a cherished social ritual.
+      </p>
+      <p>
+        In <strong>Rwanda, Uganda and Kenya</strong>, everyday meals are built on beans, plantains
+        (<em>matoke</em>), cassava and maize. On the <strong>Swahili coast</strong>, centuries of
+        Indian Ocean trade brought <mark>cloves</mark>, <mark>cardamom</mark> and
+        <mark>coconut</mark> into dishes like pilau and biryani.
+      </p>
+    </section>
+
+    <!-- ===== Staples and techniques ===== -->
+    <section class="section section-alt two-col" aria-label="Staples and cooking techniques">
+      <article>
+        <h2>Staple Ingredients</h2>
+        <ul class="feature-list">
+          <li><strong>Grains:</strong> <mark>teff</mark>, maize (for <em>ugali</em>) and sorghum</li>
+          <li><strong>Starches:</strong> green bananas (<em>matoke</em>), cassava and sweet potato</li>
+          <li><strong>Greens:</strong> <mark>cassava leaves</mark>, sukuma wiki (collard greens) and spinach</li>
+          <li><strong>Protein:</strong> beans, lentils, peanuts and lake fish like tilapia</li>
+          <li><strong>Spices:</strong> <mark>berbere</mark>, <mark>mitmita</mark>, <mark>cardamom</mark> and <mark>cloves</mark></li>
+        </ul>
+      </article>
+      <article>
+        <h2>Cooking Techniques</h2>
+        <ul class="feature-list">
+          <li><mark>Fermenting</mark>: teff batter ferments for days to make tangy injera.</li>
+          <li><mark>Slow stewing</mark>: Ethiopian <em>wats</em> begin with onions cooked down for a long time without oil.</li>
+          <li><mark>Spiced butter</mark>: <em>niter kibbeh</em> is clarified butter infused with herbs and spices.</li>
+          <li><mark>Pounding</mark>: cassava leaves are pounded for Rwandan isombe.</li>
+          <li><mark>Steaming</mark> in leaves: matoke is wrapped in banana leaves and steamed until soft.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ===== Signature dishes ===== -->
+    <section class="section" aria-labelledby="dishes-title">
+      <h2 id="dishes-title">Signature Dishes</h2>
+      <div class="card-grid">
+        <figure class="card">
+          <img src="../images/injera.jpg" alt="Spongy injera flatbread topped with colourful Ethiopian stews" loading="lazy">
+          <figcaption>
+            <h3>Injera</h3>
+            <p>Ethiopia's spongy, fermented teff flatbread, the base of every meal.</p>
+            <a href="../recipes/injera.html" class="card-link">View recipe →</a>
+          </figcaption>
+        </figure>
+
+        <figure class="card">
+          <img src="../images/isombe.jpg" alt="A bowl of dark green Isombe, Rwandan cassava leaf stew" loading="lazy">
+          <figcaption>
+            <h3>Isombe</h3>
+            <p>Rwanda's creamy stew of pounded cassava leaves, eggplant and peanut.</p>
+            <a href="../recipes/isombe.html" class="card-link">View recipe →</a>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="also-try">
+        <strong>Also try:</strong> doro wat, ugali with sukuma wiki, nyama choma, Rolex
+        (Ugandan egg roll) and Zanzibar pilau.
+      </p>
+    </section>
+
+    <!-- ===== Video ===== -->
+    <section class="section section-alt" aria-labelledby="video-title">
+      <h2 id="video-title">Taste East Africa</h2>
+      <div class="video-wrapper">
+        <!-- TODO: replace with real YouTube video ID -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                title="Video: exploring East African food"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </section>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
