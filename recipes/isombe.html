@@ -15,6 +15,7 @@
   <script src="../js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="../index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,145 @@
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
-  <main>
-    <!-- Page content coming in next phase -->
+  <main class="recipe-page">
+    <!-- ===== Recipe intro: name, image, culture ===== -->
+    <article class="recipe">
+      <header class="recipe-header">
+        <p class="breadcrumb"><a href="../recipes.html">Recipes</a> / East Africa</p>
+        <h1>Isombe</h1>
+        <button type="button" class="favorite-btn" data-id="isombe">❤️ Favorite</button>
+      </header>
+
+      <figure class="recipe-image">
+        <img src="../images/isombe.jpg" alt="A bowl of dark green Isombe, Rwandan cassava leaf stew">
+        <figcaption>Isombe is a family favourite in Rwanda, often served with rice, ugali or boiled plantains.</figcaption>
+      </figure>
+
+      <section class="recipe-culture" aria-labelledby="culture-title">
+        <h2 id="culture-title">The Story Behind the Dish</h2>
+        <p>
+          Isombe is one of <strong>Rwanda's</strong> best-loved home dishes, also eaten in
+          neighbouring Burundi and eastern DR Congo. It is made from young
+          <mark>cassava leaves</mark>, which are <mark>pounded</mark> by hand in a wooden mortar,
+          traditionally with a rhythmic beat that fills the compound.
+        </p>
+        <p>
+          Cassava leaves must always be cooked for a long time. Long cooking makes them safe to
+          eat and turns them soft and silky. Rwandan cooks enrich the stew with eggplant, onions
+          and <mark>peanut butter</mark> or <mark>palm oil</mark>, making a creamy, nutritious
+          meal full of protein, iron and vitamins.
+        </p>
+      </section>
+
+      <aside class="recipe-facts" aria-label="Recipe quick facts">
+        <ul>
+          <li><strong>Origin:</strong> Rwanda, East Africa</li>
+          <li><strong>Prep:</strong> 20 min</li>
+          <li><strong>Cook:</strong> 1 hr 30 min</li>
+          <li><strong>Difficulty:</strong> Easy</li>
+        </ul>
+      </aside>
+
+      <!-- ===== Ingredients with servings scaler ===== -->
+      <section class="ingredients" aria-labelledby="ingredients-title">
+        <h2 id="ingredients-title">Ingredients</h2>
+        <div class="scaler">
+          <label for="servings">Servings:</label>
+          <input type="number" id="servings" min="1" max="50" value="6" data-base-servings="6">
+        </div>
+        <ul class="ingredient-list">
+          <li><span class="qty" data-qty="500">500</span> g <mark>cassava leaves</mark> (fresh, or frozen pounded)</li>
+          <li><span class="qty" data-qty="2">2</span> medium eggplants, diced</li>
+          <li><span class="qty" data-qty="1">1</span> large onion, chopped</li>
+          <li><span class="qty" data-qty="1">1</span> green bell pepper, chopped</li>
+          <li><span class="qty" data-qty="2">2</span> cloves garlic, crushed</li>
+          <li><span class="qty" data-qty="2">2</span> cups fresh spinach, chopped</li>
+          <li><span class="qty" data-qty="4">4</span> tbsp natural <mark>peanut butter</mark></li>
+          <li><span class="qty" data-qty="3">3</span> tbsp <mark>palm oil</mark> or vegetable oil</li>
+          <li><span class="qty" data-qty="4">4</span> cups water</li>
+          <li><span class="qty" data-qty="1">1</span> tsp salt</li>
+        </ul>
+      </section>
+
+      <!-- ===== Cooking steps ===== -->
+      <section class="steps" aria-labelledby="steps-title">
+        <h2 id="steps-title">Method</h2>
+        <details open>
+          <summary>Show cooking steps</summary>
+          <ol>
+            <li>If using fresh leaves, wash them well and <mark>pound</mark> them in a mortar (or pulse in a food processor) until finely crushed.</li>
+            <li>Place the cassava leaves in a large pot with the water. Bring to a boil, then <mark>simmer</mark> uncovered for 45 minutes, stirring now and then.</li>
+            <li>Add the eggplant, onion, bell pepper and garlic. Cook for 20 minutes more until the eggplant is very soft.</li>
+            <li>Loosen the peanut butter with a ladle of the hot cooking liquid, then stir it into the pot.</li>
+            <li>Add the spinach, palm oil and salt. Simmer for 15–20 minutes until thick and creamy.</li>
+            <li>Taste, adjust the seasoning and serve hot with rice, ugali or boiled plantains.</li>
+          </ol>
+        </details>
+      </section>
+
+      <!-- ===== Video tutorial ===== -->
+      <section class="recipe-video" aria-labelledby="video-title">
+        <h2 id="video-title">Watch &amp; Cook</h2>
+        <div class="video-wrapper">
+          <!-- TODO: replace with real YouTube video ID -->
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                  title="Video tutorial: how to make Rwandan isombe"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <!-- ===== Nutrition table ===== -->
+      <section class="nutrition" aria-labelledby="nutrition-title">
+        <h2 id="nutrition-title">Nutritional Facts</h2>
+        <table>
+          <caption>Approximate values per serving (1 of 6)</caption>
+          <thead>
+            <tr><th scope="col">Nutrient</th><th scope="col">Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Calories</th><td>230 kcal</td></tr>
+            <tr><th scope="row">Carbohydrates</th><td>18 g</td></tr>
+            <tr><th scope="row">Protein</th><td>9 g</td></tr>
+            <tr><th scope="row">Fat</th><td>14 g</td></tr>
+            <tr><th scope="row">Fibre</th><td>8 g</td></tr>
+            <tr><th scope="row">Vitamin A</th><td>Very high</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== Map of country of origin ===== -->
+      <section class="recipe-map" aria-labelledby="map-title">
+        <h2 id="map-title">Where It's From</h2>
+        <p>Isombe is a staple of Rwanda, the "land of a thousand hills".</p>
+        <div class="map-wrapper">
+          <iframe src="https://maps.google.com/maps?q=Rwanda&amp;z=7&amp;output=embed"
+                  title="Map of Rwanda, East Africa"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+    </article>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
