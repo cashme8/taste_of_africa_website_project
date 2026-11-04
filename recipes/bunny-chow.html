@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How to make Bunny Chow, the South African curry-filled bread loaf.">
+  <meta name="description" content="How to make Bunny Chow, the South African curry-filled bread loaf from Durban.">
   <title>Bunny Chow | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface (headings) + Nunito (body) -->
@@ -15,6 +15,7 @@
   <script src="../js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="../index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,150 @@
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
-  <main>
-    <!-- Page content coming in next phase -->
+  <main class="recipe-page">
+    <!-- ===== Recipe intro: name, image, culture ===== -->
+    <article class="recipe">
+      <header class="recipe-header">
+        <p class="breadcrumb"><a href="../recipes.html">Recipes</a> / Southern Africa</p>
+        <h1>Bunny Chow</h1>
+        <button type="button" class="favorite-btn" data-id="bunny-chow">❤️ Favorite</button>
+      </header>
+
+      <figure class="recipe-image">
+        <img src="../images/bunny-chow.jpg" alt="A hollowed-out loaf of white bread filled with spicy curry">
+        <figcaption>A "quarter" bunny: a quarter loaf of bread, hollowed out and filled with curry.</figcaption>
+      </figure>
+
+      <section class="recipe-culture" aria-labelledby="culture-title">
+        <h2 id="culture-title">The Story Behind the Dish</h2>
+        <p>
+          Bunny chow was born in <strong>Durban, South Africa</strong>, home to one of the
+          largest Indian communities outside India. Their ancestors came to work on the sugar
+          plantations in the 1800s. The idea was simple and clever: a hollowed-out loaf of white
+          bread makes an edible container, so a hot <mark>curry</mark> can be carried and eaten
+          anywhere without a plate.
+        </p>
+        <p>
+          Despite the name, there is no rabbit in it! One popular theory says the name comes from
+          <em>"bania"</em>, a word for the Indian merchant community. Today bunny chow is a proud
+          symbol of Durban. The scooped-out bread "plug" is used to mop up the spicy,
+          <mark>garam masala</mark>-scented gravy.
+        </p>
+      </section>
+
+      <aside class="recipe-facts" aria-label="Recipe quick facts">
+        <ul>
+          <li><strong>Origin:</strong> Durban, South Africa</li>
+          <li><strong>Prep:</strong> 20 min</li>
+          <li><strong>Cook:</strong> 1 hr</li>
+          <li><strong>Difficulty:</strong> Easy</li>
+        </ul>
+      </aside>
+
+      <!-- ===== Ingredients with servings scaler ===== -->
+      <section class="ingredients" aria-labelledby="ingredients-title">
+        <h2 id="ingredients-title">Ingredients</h2>
+        <div class="scaler">
+          <label for="servings">Servings:</label>
+          <input type="number" id="servings" min="1" max="50" value="4" data-base-servings="4">
+        </div>
+        <ul class="ingredient-list">
+          <li><span class="qty" data-qty="1">1</span> unsliced white loaf, cut into quarters</li>
+          <li><span class="qty" data-qty="800">800</span> g lamb or chicken, cut into chunks</li>
+          <li><span class="qty" data-qty="3">3</span> medium potatoes, cubed</li>
+          <li><span class="qty" data-qty="1">1</span> large onion, finely chopped</li>
+          <li><span class="qty" data-qty="2">2</span> <mark>tomatoes</mark>, grated</li>
+          <li><span class="qty" data-qty="1">1</span> tbsp ginger-garlic paste</li>
+          <li><span class="qty" data-qty="2">2</span> tbsp Durban <mark>curry masala</mark></li>
+          <li><span class="qty" data-qty="1">1</span> tsp <mark>garam masala</mark></li>
+          <li><span class="qty" data-qty="1">1</span> <mark>cinnamon</mark> stick</li>
+          <li><span class="qty" data-qty="4">4</span> <mark>curry leaves</mark></li>
+          <li><span class="qty" data-qty="3">3</span> tbsp vegetable oil</li>
+          <li><span class="qty" data-qty="2">2</span> cups water</li>
+        </ul>
+      </section>
+
+      <!-- ===== Cooking steps ===== -->
+      <section class="steps" aria-labelledby="steps-title">
+        <h2 id="steps-title">Method</h2>
+        <details open>
+          <summary>Show cooking steps</summary>
+          <ol>
+            <li>Heat the oil in a heavy pot. Add the cinnamon stick and curry leaves and let them sizzle for 30 seconds to <mark>bloom</mark> the spices.</li>
+            <li>Add the onion and <mark>fry</mark> until golden, then stir in the ginger-garlic paste for 1 minute.</li>
+            <li>Add the curry masala and a splash of water and cook for 1 minute so the spices don't burn.</li>
+            <li>Add the meat and <mark>brown</mark> it on all sides, then stir in the grated tomatoes.</li>
+            <li>Pour in the water, cover and <mark>simmer</mark> for 35 minutes.</li>
+            <li>Add the potatoes and cook for 20 minutes more, until tender and the gravy has thickened. Stir in the garam masala.</li>
+            <li>Hollow out each bread quarter, keeping the soft middle (the "virgin") to one side.</li>
+            <li>Ladle the curry into the bread, put the bread lid back on top and serve with grated carrot salad.</li>
+          </ol>
+        </details>
+      </section>
+
+      <!-- ===== Video tutorial ===== -->
+      <section class="recipe-video" aria-labelledby="video-title">
+        <h2 id="video-title">Watch &amp; Cook</h2>
+        <div class="video-wrapper">
+          <!-- TODO: replace with real YouTube video ID -->
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                  title="Video tutorial: how to make Durban bunny chow"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <!-- ===== Nutrition table ===== -->
+      <section class="nutrition" aria-labelledby="nutrition-title">
+        <h2 id="nutrition-title">Nutritional Facts</h2>
+        <table>
+          <caption>Approximate values per serving (1 quarter loaf)</caption>
+          <thead>
+            <tr><th scope="col">Nutrient</th><th scope="col">Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Calories</th><td>780 kcal</td></tr>
+            <tr><th scope="row">Carbohydrates</th><td>82 g</td></tr>
+            <tr><th scope="row">Protein</th><td>45 g</td></tr>
+            <tr><th scope="row">Fat</th><td>30 g</td></tr>
+            <tr><th scope="row">Fibre</th><td>6 g</td></tr>
+            <tr><th scope="row">Sodium</th><td>1,100 mg</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== Map of country of origin ===== -->
+      <section class="recipe-map" aria-labelledby="map-title">
+        <h2 id="map-title">Where It's From</h2>
+        <p>Bunny chow comes from the port city of Durban on South Africa's east coast.</p>
+        <div class="map-wrapper">
+          <iframe src="https://maps.google.com/maps?q=South+Africa&amp;z=5&amp;output=embed"
+                  title="Map of South Africa"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+    </article>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
