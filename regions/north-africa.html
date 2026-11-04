@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the flavours of North African cuisine.">
+  <meta name="description" content="Discover the flavours, staples and cooking techniques of North African cuisine.">
   <title>North Africa | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface (headings) + Nunito (body) -->
@@ -15,6 +15,7 @@
   <script src="../js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="../index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,107 @@
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
-  <main>
-    <!-- Page content coming in next phase -->
+  <main class="region-page">
+    <!-- ===== Region intro ===== -->
+    <section class="page-intro">
+      <p class="breadcrumb"><a href="../regions.html">Regions</a> / North Africa</p>
+      <h1>North Africa</h1>
+      <figure class="region-banner">
+        <img src="../images/north-africa.jpg" alt="Pyramids of colourful spices at a North African souk">
+        <figcaption>Spice stalls in the souks perfume whole streets.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ===== Food culture ===== -->
+    <section class="section" aria-labelledby="culture-title">
+      <h2 id="culture-title">Food Culture</h2>
+      <p>
+        North African cooking, from Morocco and Algeria to Tunisia, Libya and Egypt, mixes
+        <strong>Amazigh (Berber)</strong> traditions with Arab, Mediterranean, Andalusian and
+        Ottoman influences. Meals are shared from a central dish, hospitality is sacred, and
+        sweet mint tea is poured for every guest.
+      </p>
+      <p>
+        On Fridays, families across the Maghreb traditionally gather for a big plate of
+        <mark>couscous</mark>. Couscous is so central to the region that it was added to
+        UNESCO's Intangible Cultural Heritage list in 2020.
+      </p>
+    </section>
+
+    <!-- ===== Staples and techniques ===== -->
+    <section class="section section-alt two-col" aria-label="Staples and cooking techniques">
+      <article>
+        <h2>Staple Ingredients</h2>
+        <ul class="feature-list">
+          <li><strong>Grains:</strong> semolina <mark>couscous</mark>, wheat bread and barley</li>
+          <li><strong>Legumes:</strong> chickpeas, lentils and fava beans</li>
+          <li><strong>Fruit:</strong> olives, dates, figs, apricots and lemons</li>
+          <li><strong>Herbs:</strong> fresh mint, coriander and parsley</li>
+          <li><strong>Spices:</strong> <mark>cumin</mark>, <mark>saffron</mark>, <mark>cinnamon</mark>, <mark>harissa</mark> and <mark>ras el hanout</mark></li>
+        </ul>
+      </article>
+      <article>
+        <h2>Cooking Techniques</h2>
+        <ul class="feature-list">
+          <li><mark>Slow braising</mark>: meat and vegetables cook gently for hours in a clay tagine.</li>
+          <li><mark>Steaming</mark>: couscous is steamed two or three times over a simmering stew in a <em>couscoussier</em>.</li>
+          <li><mark>Preserving</mark>: lemons are packed in salt for weeks until soft and tangy.</li>
+          <li><mark>Spice blending</mark>: <em>ras el hanout</em> ("head of the shop") can contain over 20 spices.</li>
+          <li><mark>Baking</mark>: flatbreads like <em>khobz</em> are baked in communal ovens.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ===== Signature dishes ===== -->
+    <section class="section" aria-labelledby="dishes-title">
+      <h2 id="dishes-title">Signature Dishes</h2>
+      <div class="card-grid">
+        <figure class="card">
+          <img src="../images/tagine.jpg" alt="Chicken tagine with olives and preserved lemon in a conical clay pot" loading="lazy">
+          <figcaption>
+            <h3>Tagine</h3>
+            <p>Chicken slow-cooked with preserved lemon, olives and warm spices.</p>
+            <a href="../recipes/tagine.html" class="card-link">View recipe →</a>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="also-try">
+        <strong>Also try:</strong> couscous with seven vegetables, harira soup, shakshuka,
+        Egyptian koshari and pastilla.
+      </p>
+    </section>
+
+    <!-- ===== Video ===== -->
+    <section class="section section-alt" aria-labelledby="video-title">
+      <h2 id="video-title">Taste North Africa</h2>
+      <div class="video-wrapper">
+        <!-- TODO: replace with real YouTube video ID -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                title="Video: exploring North African and Moroccan food"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </section>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
