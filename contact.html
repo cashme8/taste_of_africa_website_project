@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with Taste of Africa.">
+  <meta name="description" content="Get in touch with Taste of Africa: share a recipe, ask a question or send feedback.">
   <title>Contact | Taste of Africa</title>
 
   <!-- Google Fonts: Abril Fatface (headings) + Nunito (body) -->
@@ -15,6 +15,7 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
+  <!-- ===== Site header & navigation ===== -->
   <header class="site-header">
     <a href="index.html" class="site-name">Taste of Africa</a>
     <nav aria-label="Main navigation">
@@ -26,14 +27,122 @@
         <li><a href="contact.html" aria-current="page">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
   </header>
 
   <main>
-    <!-- Page content coming in next phase -->
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <h1>Contact Us</h1>
+      <p>
+        Have a family recipe to share, a question about a dish, or feedback on the site?
+        We'd love to hear from you.
+      </p>
+    </section>
+
+    <div class="contact-layout">
+      <!-- ===== Contact form ===== -->
+      <section class="contact-form-section" aria-labelledby="form-title">
+        <h2 id="form-title">Send a Message</h2>
+
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input id="country" name="country" list="countries" placeholder="Start typing your country">
+            <datalist id="countries">
+              <option value="Algeria">
+              <option value="Angola">
+              <option value="Botswana">
+              <option value="Burundi">
+              <option value="Cameroon">
+              <option value="Côte d'Ivoire">
+              <option value="DR Congo">
+              <option value="Egypt">
+              <option value="Eritrea">
+              <option value="Ethiopia">
+              <option value="Ghana">
+              <option value="Kenya">
+              <option value="Malawi">
+              <option value="Mali">
+              <option value="Morocco">
+              <option value="Mozambique">
+              <option value="Namibia">
+              <option value="Nigeria">
+              <option value="Rwanda">
+              <option value="Senegal">
+              <option value="South Africa">
+              <option value="Tanzania">
+              <option value="Tunisia">
+              <option value="Uganda">
+              <option value="Zambia">
+              <option value="Zimbabwe">
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option value="general">General question</option>
+              <option value="recipe">Share a recipe</option>
+              <option value="feedback">Website feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required
+                      aria-describedby="message-hint form-error"></textarea>
+            <small id="message-hint" class="hint">Please write more than 20 characters.</small>
+          </div>
+
+          <!-- Error messages appear here (filled in by script.js) -->
+          <p id="form-error" class="form-error" role="alert"></p>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <!-- Success message, shown by script.js after a valid submit -->
+        <div id="form-success" class="form-success hidden" role="status" aria-live="polite"></div>
+      </section>
+
+      <!-- ===== Contact details ===== -->
+      <aside class="contact-info" aria-labelledby="info-title">
+        <h2 id="info-title">Other Ways to Reach Us</h2>
+        <ul>
+          <li><strong>Email:</strong> hello@tasteofafrica.example</li>
+          <li><strong>Based in:</strong> Kigali, Rwanda</li>
+          <li><strong>Response time:</strong> within 2–3 days</li>
+        </ul>
+        <p>Sharing a family recipe? Tell us where it comes from and who taught you. The story matters as much as the food.</p>
+      </aside>
+    </div>
   </main>
 
+  <!-- ===== Footer with newsletter signup ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 Taste of Africa. All rights reserved.</p>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get New Recipes in Your Inbox</h2>
+      <form class="newsletter-form">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      <p class="newsletter-message" aria-live="polite"></p>
+    </section>
+    <p class="copyright">&copy; 2026 Taste of Africa. All rights reserved.</p>
   </footer>
 </body>
 </html>
