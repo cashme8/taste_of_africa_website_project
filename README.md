@@ -77,4 +77,38 @@ All code is in `js/script.js`, loaded with `defer` on every page. Each feature i
 
 ## ▶️ Running Locally
 
-No build step is needed. Open `index.html` in a browser, or use the VS Code **Live Server** extension for auto-reload.
+No build step is needed. Use the VS Code **Live Server** extension (right-click `index.html` → *Open with Live Server*).
+
+> **Note:** If you open `index.html` by double-clicking it (a `file://` address), the YouTube videos show *"Error 153"*. YouTube only plays embedded videos on pages served from a web address. They work with Live Server and on GitHub Pages.
+
+## 🎨 Design
+
+The colour scheme is inspired by **kente cloth** and African textiles. Saffron, pepper red, baobab green and Majorelle blue stripes run along the header, footer and every section heading. Each region has its own colour, used across its cards, banners, filter button and highlights:
+
+| Region | Colour |
+| --- | --- |
+| West Africa | Mango orange |
+| North Africa | Majorelle blue (the famous blue of Marrakech) |
+| East Africa | Baobab green |
+| Southern Africa | Amethyst purple |
+
+## 📸 Photo Credits
+
+Photos are saved in `images/` and come from free sources. Pexels photos are under the [Pexels License](https://www.pexels.com/license/); Wikimedia Commons photos are used under the Creative Commons licence listed. Credits also appear on the About page and under each recipe and region photo.
+
+| File | Photographer | Source / Licence |
+| --- | --- | --- |
+| `hero-spices.jpg` | Pexels contributor | [Pexels](https://www.pexels.com/photo/6302105/) |
+| `jollof-rice.jpg` | Studio Saiz | [Pexels](https://www.pexels.com/photo/17952748/) |
+| `tagine.jpg` | Foodista | [Wikimedia Commons, CC BY 2.0](https://commons.wikimedia.org/wiki/File:Moroccan_food-Chicken_tagine_with_preserved_lemons_and_olives-01.jpg) |
+| `injera.jpg` | Jbinthecity | [Wikimedia Commons, CC0](https://commons.wikimedia.org/wiki/File:Ethiopian_fasting_platter.jpg) |
+| `bunny-chow.jpg` | Djreddy1985 | [Wikimedia Commons, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Durban%27s_Famous_Mutton_Bunny_Chow.jpg) |
+| `isombe.jpg` | Mutiganda | [Wikimedia Commons, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:ISOMBE_AND_RICE.jpg) |
+| `west-africa.jpg` | Edris Ibraheem | [Pexels](https://www.pexels.com/photo/31923982/) |
+| `north-africa.jpg` | Pexels contributor | [Pexels](https://www.pexels.com/photo/6441186/) |
+| `east-africa.jpg` | FrogsLegs71 | [Wikimedia Commons, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Injera_and_traditional_platter_in_Ethopia.jpg) |
+| `about-shared-meal.jpg` | Pexels contributor | [Pexels](https://www.pexels.com/photo/6193435/) |
+
+## 🎬 Videos
+
+All videos are embedded from YouTube and belong to their creators: Tastes of Africa (African Australian), Cooking with Nkiru, CookingWithAlia, Mulu Cooks, Pants Down Aprons On, Unapologetic Nomads, Faith Afahaene, and Chad and Claire.
