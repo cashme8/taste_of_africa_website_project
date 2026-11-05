@@ -8,19 +8,19 @@ Built with **HTML5, CSS and vanilla JavaScript only**: no frameworks or librarie
 
 **GitHub Pages:** _Coming soon — https://cashme8.github.io/taste_of_africa_website_project/ (link will be confirmed once deployed)_
 
-## ✨ Features
+##  Features
 
 - **Responsive design**: CSS Grid and Flexbox layouts with breakpoints for tablets (≤ 900px) and phones (≤ 640px), plus a mobile-friendly navigation bar
 - **Dark / light mode**: theme toggle in every page header, remembered between visits
 - **Recipe filter**: show recipes by region (West, East, North or Southern Africa)
-- **Favorites**: save recipes with ❤️; your choices persist in the browser
+- **Favorites**: save recipes with; your choices persist in the browser
 - **Ingredient scaler**: change the number of servings and every quantity updates
 - **Contact form validation**: friendly error messages and a personalised thank-you
 - **Newsletter signup**: in every page footer
 - **Embedded media**: YouTube cooking videos and Google Maps (responsive 16:9 wrappers)
 - **Accessible, semantic HTML**: landmarks, one `<h1>` per page, labelled form fields, alt text, `<mark>` highlights for key ingredients and techniques
 
-## 📄 Pages
+##  Pages
 
 | Page | File | Contents |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ Food culture, staple ingredients, cooking techniques, signature dishes and a vid
 - North Africa: `regions/north-africa.html`
 - East Africa: `regions/east-africa.html`
 
-## ⚙️ How the JavaScript Works
+##  How the JavaScript Works
 
 All code is in `js/script.js`, loaded with `defer` on every page. Each feature is its own function and first checks that its elements exist, so the same script runs safely on every page.
 
@@ -57,14 +57,14 @@ All code is in `js/script.js`, loaded with `defer` on every page. Each feature i
 5. **Dark mode** (`initThemeToggle`): `#theme-toggle` toggles `body.dark-mode`, which redefines the CSS colour variables. The choice (`dark`/`light`) is saved in `localStorage` and restored on every page.
 6. **Newsletter** (`initNewsletter`): prevents the default submit and shows "Thanks for subscribing!" under the form.
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - HTML5 (semantic elements, forms, `<details>`, `<datalist>`, tables, iframes)
 - CSS3 (custom properties, Grid, Flexbox, media queries, transitions)
 - Vanilla JavaScript (DOM events, `localStorage`)
 - Google Fonts: Abril Fatface (headings), Nunito (body)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── index.html, recipes.html, regions.html, about.html, contact.html
@@ -75,13 +75,13 @@ All code is in `js/script.js`, loaded with `defer` on every page. Each feature i
 └── images/       # Dish, region and hero photos
 ```
 
-## ▶️ Running Locally
+##  Running Locally
 
 No build step is needed. Use the VS Code **Live Server** extension (right-click `index.html` → *Open with Live Server*).
 
 > **Note:** If you open `index.html` by double-clicking it (a `file://` address), the YouTube videos show *"Error 153"*. YouTube only plays embedded videos on pages served from a web address. They work with Live Server and on GitHub Pages.
 
-## 🎨 Design
+## Design
 
 The site uses a **modern African colour palette**: calm, warm and premium, with soft shadows, rounded cards and a slim gold accent under each section heading:
 
