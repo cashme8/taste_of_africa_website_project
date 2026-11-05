@@ -83,7 +83,7 @@ No build step is needed. Use the VS Code **Live Server** extension (right-click 
 
 ## 🎨 Design
 
-The site uses a **modern African colour palette**: calm, warm and premium. The layout keeps its **kente-inspired stripes** along the header, footer and section headings, redrawn in these tones:
+The site uses a **modern African colour palette**: calm, warm and premium, with soft shadows, rounded cards and a slim gold accent under each section heading:
 
 | Role | Colour |
 | --- | --- |
