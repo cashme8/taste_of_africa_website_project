@@ -83,14 +83,27 @@ No build step is needed. Use the VS Code **Live Server** extension (right-click 
 
 ## 🎨 Design
 
-The colour scheme is inspired by **kente cloth** and African textiles. Saffron, pepper red, baobab green and Majorelle blue stripes run along the header, footer and every section heading. Each region has its own colour, used across its cards, banners, filter button and highlights:
+The site uses a **modern African colour palette**: calm, warm and premium. The layout keeps its **kente-inspired stripes** along the header, footer and section headings, redrawn in these tones:
+
+| Role | Colour |
+| --- | --- |
+| Primary (header, footer, headings, buttons) | Deep forest green `#173F35` |
+| Background | Warm ivory `#F7F4EC` |
+| Premium accent | Muted African gold `#D5A66A` |
+| Food accent | Terracotta `#B86F52` (darker `#A65D42` where it carries text) |
+| Text | Deep charcoal `#263238` |
+| Borders | `#E8E3D9` |
+
+Each region has its own muted colour, used across its cards, banners, filter button and highlights:
 
 | Region | Colour |
 | --- | --- |
-| West Africa | Mango orange |
-| North Africa | Majorelle blue (the famous blue of Marrakech) |
-| East Africa | Baobab green |
-| Southern Africa | Amethyst purple |
+| West Africa | Terracotta |
+| North Africa | Spice brown |
+| East Africa | Forest green |
+| Southern Africa | Muted plum |
+
+All colour pairs used for text meet the WCAG AA contrast ratio (4.5:1).
 
 ## 📸 Photo Credits
 

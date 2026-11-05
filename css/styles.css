@@ -25,48 +25,48 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Warm yellows */
-  --color-saffron: #f4a300;
-  --color-gold: #e8b923;
-  --color-sun: #ffd166;
+  --color-saffron: #D5A66A;  /* muted African gold */
+  --color-gold: #C9955A;
+  --color-sun: #EBD3AE;      /* light gold for text on dark */
 
   /* Deep reds */
-  --color-hibiscus: #a4161a;
-  --color-pepper: #c1272d;
-  --color-clay-red: #8b1e1e;
+  --color-hibiscus: #173F35;  /* deep forest green (primary) */
+  --color-pepper: #A65D42;    /* terracotta (AA-safe shade) */
+  --color-clay-red: #7E4330;
 
   /* Earthy browns */
-  --color-earth: #5c3a21;
-  --color-cocoa: #3e2415;
-  --color-sand: #f5e6cc;
+  --color-earth: #6B5A4A;
+  --color-cocoa: #0F2D26;     /* darkest forest */
+  --color-sand: #EFEBE1;
 
-  /* Extra vibrant accents (inspired by kente cloth and African textiles) */
-  --color-mango: #e8590c;
-  --color-majorelle: #1f4fbf;  /* the famous blue of Marrakech */
-  --color-baobab: #1b8a4c;     /* leafy green */
-  --color-teal: #0e7c86;
-  --color-bougainvillea: #c2185b;
-  --color-amethyst: #7b2cbf;
+  /* Supporting accents: muted, modern tones */
+  --color-mango: #A65D42;
+  --color-majorelle: #4A6670;  /* muted slate */
+  --color-baobab: #2F6B57;     /* soft forest */
+  --color-teal: #3E6E73;
+  --color-bougainvillea: #9A5560;
+  --color-amethyst: #6C5B7B;
 
   /* Neutrals */
-  --color-cream: #fffaf0;
-  --color-text: #2b1a10;
+  --color-cream: #F7F4EC;     /* warm ivory background */
+  --color-text: #263238;      /* deep charcoal */
 
   /* Region colours (main + deep shade for text on colour) */
   --west: var(--color-mango);
-  --west-deep: #9c2f0a;
-  --north: var(--color-majorelle);
-  --north-deep: #142f73;
+  --west-deep: #7E4330;
+  --north: #8F6530;
+  --north-deep: #6B4A22;
   --east: var(--color-baobab);
-  --east-deep: #0d5c33;
+  --east-deep: #173F35;
   --south: var(--color-amethyst);
-  --south-deep: #4c1580;
+  --south-deep: #4A3D57;
 
   /* Kente-inspired stripe used on header, footer and headings */
   --kente: repeating-linear-gradient(90deg,
     var(--color-saffron) 0 1.5rem,
     var(--color-pepper) 1.5rem 2.25rem,
     var(--color-baobab) 2.25rem 3.75rem,
-    #1a1a1a 3.75rem 4.1rem,
+    var(--color-text) 3.75rem 4.1rem,
     var(--color-majorelle) 4.1rem 5.25rem,
     var(--color-gold) 5.25rem 5.6rem);
   --rainbow: linear-gradient(90deg, var(--color-pepper), var(--color-saffron), var(--color-baobab), var(--color-majorelle));
@@ -79,22 +79,22 @@
   --bg: var(--color-cream);
   --surface: #ffffff;
   --surface-alt: var(--color-sand);
-  --alt-gradient: linear-gradient(135deg, #fff1d6 0%, #ffe3dc 50%, #e3f4ea 100%);
+  --alt-gradient: linear-gradient(135deg, #F3EEE3 0%, #EFEBE1 50%, #E6EDE9 100%);
   --text: var(--color-text);
-  --text-muted: #6b5443;
+  --text-muted: #6B6A63;
   --heading: var(--color-hibiscus);
   --accent: var(--color-pepper);
   --accent-hover: var(--color-clay-red);
   --link: var(--color-hibiscus);
-  --border: #e6d3b3;
+  --border: #E8E3D9;
   --header-bg: var(--color-cocoa);
   --header-text: var(--color-sand);
-  --mark-bg: rgba(244, 163, 0, 0.35);
-  --shadow: 0 0.25rem 1rem rgba(62, 36, 21, 0.12);
-  --shadow-hover: 0 0.75rem 2rem rgba(62, 36, 21, 0.22);
+  --mark-bg: rgba(213, 166, 106, 0.32);
+  --shadow: 0 0.25rem 1rem rgba(23, 63, 53, 0.10);
+  --shadow-hover: 0 0.75rem 2rem rgba(23, 63, 53, 0.18);
 
   /* Default "region" colour for components (overridden by .region-* classes) */
-  --region: var(--color-pepper);
+  --region: var(--color-baobab);
   --region-deep: var(--color-hibiscus);
 
   /* Shape & spacing */
@@ -117,20 +117,20 @@
 /* 2. Dark theme — toggled by #theme-toggle (adds body.dark-mode)
    -------------------------------------------------------------------------- */
 body.dark-mode {
-  --bg: #1c120b;
-  --surface: #2a1b11;
-  --surface-alt: #34231a;
-  --alt-gradient: linear-gradient(135deg, #2e1d12 0%, #3a1a1c 50%, #142a1f 100%);
-  --text: #f3e6d3;
-  --text-muted: #c9b39b;
+  --bg: #0F1E19;
+  --surface: #16302A;
+  --surface-alt: #1C3A33;
+  --alt-gradient: linear-gradient(135deg, #13261F 0%, #16302A 50%, #1A2E2A 100%);
+  --text: #ECE8DF;
+  --text-muted: #A9A69C;
   --heading: var(--color-sun);
   --accent: var(--color-saffron);
   --accent-hover: var(--color-gold);
   --link: var(--color-sun);
-  --border: #4a3424;
-  --header-bg: #120b06;
+  --border: #284840;
+  --header-bg: #0A1612;
   --header-text: var(--color-sand);
-  --mark-bg: rgba(193, 39, 45, 0.45);
+  --mark-bg: rgba(213, 166, 106, 0.25);
   --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.45);
   --shadow-hover: 0 0.75rem 2rem rgba(0, 0, 0, 0.6);
 }
@@ -230,13 +230,13 @@ a:hover { color: var(--accent-hover); }
   padding: 0.8rem 1.8rem;
   border: none;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-pepper), var(--color-mango) 60%, var(--color-saffron));
+  background: linear-gradient(135deg, var(--color-hibiscus), var(--color-baobab) 60%, #3E7B68);
   background-size: 160% 100%;
   color: #fff;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 0.4rem 1rem rgba(193, 39, 45, 0.35);
+  box-shadow: 0 0.4rem 1rem rgba(23, 63, 53, 0.28);
   transition: background-position 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -244,7 +244,7 @@ a:hover { color: var(--accent-hover); }
   background-position: 100% 0;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 0.6rem 1.4rem rgba(193, 39, 45, 0.45);
+  box-shadow: 0 0.6rem 1.4rem rgba(23, 63, 53, 0.38);
 }
 
 /* 5. Header & navigation
@@ -279,7 +279,7 @@ a:hover { color: var(--accent-hover); }
   text-decoration: none;
   white-space: nowrap;
   /* Sunset-coloured logo text */
-  background: linear-gradient(90deg, var(--color-sun), var(--color-saffron), #ff7a59);
+  background: linear-gradient(90deg, var(--color-sun), var(--color-saffron), #E3B8A3);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -336,7 +336,7 @@ a:hover { color: var(--accent-hover); }
 }
 
 .theme-toggle:hover {
-  background: rgba(244, 163, 0, 0.2);
+  background: rgba(213, 166, 106, 0.2);
   transform: rotate(20deg);
 }
 
@@ -362,7 +362,7 @@ a:hover { color: var(--accent-hover); }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(110deg, rgba(40, 18, 6, 0.9) 0%, rgba(120, 20, 30, 0.7) 50%, rgba(232, 89, 12, 0.35) 100%);
+    linear-gradient(110deg, rgba(15, 45, 38, 0.93) 0%, rgba(23, 63, 53, 0.78) 50%, rgba(166, 93, 66, 0.35) 100%);
 }
 
 /* Kente stripe at the bottom of the hero */
@@ -388,7 +388,7 @@ a:hover { color: var(--accent-hover); }
 }
 
 .hero h1 {
-  background: linear-gradient(90deg, var(--color-sun), var(--color-saffron) 50%, #ff9e7a);
+  background: linear-gradient(90deg, var(--color-sun), var(--color-saffron) 50%, #E3B8A3);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -402,7 +402,7 @@ a:hover { color: var(--accent-hover); }
 }
 
 .hero mark {
-  background: rgba(244, 163, 0, 0.4);
+  background: rgba(213, 166, 106, 0.35);
   color: #fff;
 }
 
@@ -443,7 +443,7 @@ a:hover { color: var(--accent-hover); }
   color: #fff;
   background:
     radial-gradient(rgba(255, 255, 255, 0.16) 2px, transparent 2.5px) 0 0 / 1.4rem 1.4rem,
-    linear-gradient(135deg, var(--region-deep), var(--region) 55%, var(--color-saffron));
+    linear-gradient(135deg, var(--region-deep), var(--region));
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -718,15 +718,15 @@ body.dark-mode .filter-btn.active {
 /* Favorited: full-colour red heart with a little pop */
 .favorite-btn.active {
   filter: none;
-  background: linear-gradient(135deg, #ffe3e3, #ffd0dc);
+  background: linear-gradient(135deg, #FBEDE7, #F6E1D8);
   border-color: var(--color-pepper);
   color: var(--color-clay-red);
   animation: heart-pop 0.3s ease;
 }
 
 body.dark-mode .favorite-btn.active {
-  background: #4a1416;
-  color: #ffd6d6;
+  background: #3A2620;
+  color: #F2C4B3;
 }
 
 @keyframes heart-pop {
@@ -755,7 +755,7 @@ body.dark-mode .favorite-btn.active {
   color: #fff;
   background:
     radial-gradient(rgba(255, 255, 255, 0.16) 2px, transparent 2.5px) 0 0 / 1.4rem 1.4rem,
-    linear-gradient(135deg, var(--region-deep), var(--region) 60%, var(--color-saffron));
+    linear-gradient(135deg, var(--region-deep), var(--region));
   box-shadow: var(--shadow);
 }
 
@@ -901,7 +901,7 @@ details {
 
 summary {
   padding: 1rem 1.25rem;
-  background: linear-gradient(90deg, var(--color-sun), #ffe8b0);
+  background: linear-gradient(90deg, #EFE3CF, #F7F4EC);
   color: var(--color-cocoa);
   font-weight: 700;
   cursor: pointer;
@@ -1026,7 +1026,7 @@ body.dark-mode .region-page mark {
   border-radius: var(--radius);
   background:
     radial-gradient(rgba(255, 255, 255, 0.12) 2px, transparent 2.5px) 0 0 / 1.4rem 1.4rem,
-    linear-gradient(135deg, var(--color-bougainvillea), var(--color-pepper) 45%, var(--color-mango) 80%, var(--color-saffron));
+    linear-gradient(135deg, var(--color-cocoa), var(--color-hibiscus) 50%, var(--color-baobab));
   color: #fff;
   text-align: center;
   box-shadow: var(--shadow);
@@ -1165,7 +1165,7 @@ body.dark-mode .region-page mark {
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--color-saffron);
-  box-shadow: 0 0 0 4px rgba(244, 163, 0, 0.3);
+  box-shadow: 0 0 0 4px rgba(213, 166, 106, 0.35);
 }
 
 .hint {
@@ -1181,12 +1181,12 @@ body.dark-mode .region-page mark {
   font-weight: 700;
 }
 
-body.dark-mode .form-error { color: #ff8a8a; }
+body.dark-mode .form-error { color: #F0A89A; }
 
 .form-success {
   padding: 2rem;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, #e3f4ea, #fff1d6);
+  background: linear-gradient(135deg, #E4ECE8, #F7F4EC);
   color: var(--color-text);
   border-left: 6px solid var(--color-baobab);
   font-size: 1.2rem;
@@ -1200,8 +1200,8 @@ body.dark-mode .form-error { color: #ff8a8a; }
   margin-top: 3rem;
   padding: calc(3rem + 0.5rem) var(--gutter) 1.5rem;
   background:
-    radial-gradient(rgba(255, 209, 102, 0.08) 2px, transparent 2.5px) 0 0 / 1.4rem 1.4rem,
-    linear-gradient(160deg, var(--header-bg), #4a1416 70%, #5c2a0a);
+    radial-gradient(rgba(213, 166, 106, 0.07) 2px, transparent 2.5px) 0 0 / 1.4rem 1.4rem,
+    linear-gradient(160deg, var(--header-bg), #173F35 70%, #1E4A3F);
   color: var(--header-text);
   text-align: center;
 }
@@ -1250,7 +1250,7 @@ body.dark-mode .form-error { color: #ff8a8a; }
 .newsletter-row input:focus {
   outline: none;
   border-color: var(--color-saffron);
-  box-shadow: 0 0 0 4px rgba(244, 163, 0, 0.35);
+  box-shadow: 0 0 0 4px rgba(213, 166, 106, 0.4);
 }
 
 .newsletter-row button {
