@@ -1,57 +1,35 @@
-/* ==========================================================================
-   Taste of Africa — Main Stylesheet
-   Description: Global styles for the Taste of Africa website.
-   Sections:
-     1.  CSS Variables (colour palette, region colours, fonts, theme tokens)
-     2.  Dark theme
-     3.  Reset
-     4.  Base
-     5.  Header & navigation
-     6.  Hero
-     7.  Layout sections & colourful page banners
-     8.  Cards
-     9.  Filter buttons & favorites
-     10. Recipe pages (ingredients, details/summary, tables)
-     11. Regions (custom <mark>)
-     12. About (mission statement, credits)
-     13. Contact form
-     14. Newsletter footer
-     15. Responsive video & map wrappers
-     16. Utilities
-     17. Responsive (tablet & phone)
-   ========================================================================== */
+/* Styles for the whole site, grouped by the parts they affect. */
 
-/* 1. CSS Variables
-   -------------------------------------------------------------------------- */
+/* My colour palette, fonts, and shared design settings. */
 :root {
-  /* Warm yellows */
-  --color-saffron: #D5A66A;  /* muted African gold */
+  /* Gold tones */
+  --color-saffron: #D5A66A;  /* muted gold */
   --color-gold: #C9955A;
-  --color-sun: #EBD3AE;      /* light gold for text on dark */
+  --color-sun: #EBD3AE;      /* light gold for dark backgrounds */
 
-  /* Deep reds */
-  --color-hibiscus: #173F35;  /* deep forest green (primary) */
-  --color-pepper: #A65D42;    /* terracotta (AA-safe shade) */
+  /* Forest greens and warm reds */
+  --color-hibiscus: #173F35;  /* primary forest green */
+  --color-pepper: #A65D42;    /* accessible terracotta */
   --color-clay-red: #7E4330;
 
-  /* Earthy browns */
+  /* Earthy neutrals */
   --color-earth: #6B5A4A;
-  --color-cocoa: #0F2D26;     /* darkest forest */
+  --color-cocoa: #0F2D26;     /* darkest green */
   --color-sand: #EFEBE1;
 
-  /* Supporting accents: muted, modern tones */
+  /* A few softer accent colours */
   --color-mango: #A65D42;
-  --color-majorelle: #4A6670;  /* muted slate */
-  --color-baobab: #2F6B57;     /* soft forest */
+  --color-majorelle: #4A6670;  /* muted blue-grey */
+  --color-baobab: #2F6B57;     /* softer forest green */
   --color-teal: #3E6E73;
   --color-bougainvillea: #9A5560;
   --color-amethyst: #6C5B7B;
 
-  /* Neutrals */
-  --color-cream: #F7F4EC;     /* warm ivory background */
-  --color-text: #263238;      /* deep charcoal */
+  /* Background and text colours */
+  --color-cream: #F7F4EC;     /* warm ivory */
+  --color-text: #263238;      /* charcoal */
 
-  /* Region colours (main + deep shade for text on colour) */
+  /* Each region has a main colour and a darker shade for text */
   --west: var(--color-mango);
   --west-deep: #7E4330;
   --north: #8F6530;
@@ -61,13 +39,13 @@
   --south: var(--color-amethyst);
   --south-deep: #4A3D57;
 
-  --rainbow: var(--color-saffron); /* single gold accent (no multicolour stripes) */
+  --rainbow: var(--color-saffron); /* I keep this accent a simple gold */
 
-  /* Fonts */
+  /* Fonts I use for headings and body copy */
   --font-heading: "Abril Fatface", Georgia, serif;
   --font-body: "Nunito", "Segoe UI", Arial, sans-serif;
 
-  /* Theme tokens (used by components; swapped in dark mode) */
+  /* These shared colours switch when dark mode is on */
   --bg: var(--color-cream);
   --surface: #ffffff;
   --surface-alt: var(--color-sand);
@@ -85,18 +63,18 @@
   --shadow: 0 1px 2px rgba(23, 63, 53, 0.05), 0 12px 32px -14px rgba(23, 63, 53, 0.18);
   --shadow-hover: 0 2px 4px rgba(23, 63, 53, 0.06), 0 28px 56px -22px rgba(23, 63, 53, 0.35);
 
-  /* Default "region" colour for components (overridden by .region-* classes) */
+  /* Components use these colours unless a region sets its own */
   --region: var(--color-baobab);
   --region-deep: var(--color-hibiscus);
 
-  /* Shape & spacing */
+  /* Shared sizes for corners and page spacing */
   --radius: 1.1rem;
   --radius-sm: 0.6rem;
   --max-width: 72rem;
   --gutter: clamp(1rem, 4vw, 2rem);
 }
 
-/* Region classes set the colour that cards, banners and marks pick up */
+/* Give each region's cards, banners, and highlights its own colour. */
 .region-west,
 [data-region="west-africa"]     { --region: var(--west);  --region-deep: var(--west-deep); }
 .region-north,
@@ -106,8 +84,7 @@
 .region-south,
 [data-region="southern-africa"] { --region: var(--south); --region-deep: var(--south-deep); }
 
-/* 2. Dark theme — toggled by #theme-toggle (adds body.dark-mode)
-   -------------------------------------------------------------------------- */
+/* Dark mode updates the shared colours when the toggle adds this class. */
 body.dark-mode {
   --bg: #0F1E19;
   --surface: #16302A;
@@ -127,8 +104,7 @@ body.dark-mode {
   --shadow-hover: 0 0.75rem 2rem rgba(0, 0, 0, 0.6);
 }
 
-/* 3. Reset
-   -------------------------------------------------------------------------- */
+/* Start with a consistent box model and reset browser defaults. */
 *,
 *::before,
 *::after {
@@ -156,10 +132,9 @@ textarea {
   color: inherit;
 }
 
-/* 4. Base
-   -------------------------------------------------------------------------- */
+/* Base type, links, focus states, and buttons. */
 html {
-  font-size: 100%; /* 16px base */
+  font-size: 100%; /* Keep the browser's 16px base size. */
   scroll-behavior: smooth;
 }
 
@@ -177,7 +152,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
-  font-weight: 400; /* Abril Fatface is already heavy */
+  font-weight: 400; /* This font has plenty of weight on its own. */
   line-height: 1.2;
   color: var(--heading);
   letter-spacing: 0.01em;
@@ -187,7 +162,7 @@ h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
 h2 { font-size: clamp(1.6rem, 3.5vw, 2.25rem); margin-bottom: 1rem; }
 h3 { font-size: 1.35rem; margin-bottom: 0.4rem; }
 
-/* Slim gold accent line under section headings */
+/* A small gold line helps section headings stand out. */
 h2::after {
   content: "";
   display: block;
@@ -216,7 +191,7 @@ a:hover { color: var(--accent-hover); }
   outline-offset: 2px;
 }
 
-/* Primary button style: warm sunset gradient */
+/* The main button uses the site's green and gold colours. */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;
@@ -239,8 +214,7 @@ a:hover { color: var(--accent-hover); }
   box-shadow: 0 0.6rem 1.4rem rgba(23, 63, 53, 0.38);
 }
 
-/* 5. Header & navigation
-   -------------------------------------------------------------------------- */
+/* Sticky header and navigation. */
 .site-header {
   position: sticky;
   top: 0;
@@ -261,7 +235,7 @@ a:hover { color: var(--accent-hover); }
   font-size: 1.6rem;
   text-decoration: none;
   white-space: nowrap;
-  /* Sunset-coloured logo text */
+  /* A little gold gradient gives the site name its colour. */
   background: linear-gradient(90deg, var(--color-sun), var(--color-saffron), #E3B8A3);
   -webkit-background-clip: text;
   background-clip: text;
@@ -285,7 +259,7 @@ a:hover { color: var(--accent-hover); }
   transition: color 0.2s ease;
 }
 
-/* Animated underline on hover */
+/* Show an underline when a link is current or hovered. */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -323,8 +297,7 @@ a:hover { color: var(--accent-hover); }
   transform: rotate(20deg);
 }
 
-/* 6. Hero
-   -------------------------------------------------------------------------- */
+/* The welcome section on the home page. */
 .hero {
   position: relative;
   min-height: min(80vh, 44rem);
@@ -332,14 +305,14 @@ a:hover { color: var(--accent-hover); }
   align-items: center;
   padding: 4rem var(--gutter);
   color: #fff;
-  /* Path is relative to this CSS file, so ../images/ */
-  background-color: var(--color-cocoa); /* fallback while image loads */
+  /* This path starts from the CSS file. */
+  background-color: var(--color-cocoa); /* Keep the hero dark while the image loads. */
   background-image: url("../images/hero-spices.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* Warm, colourful overlay so the text stays readable */
+/* This overlay keeps the text easy to read over the photo. */
 .hero::before {
   content: "";
   position: absolute;
@@ -349,7 +322,7 @@ a:hover { color: var(--accent-hover); }
 }
 
 .hero-inner {
-  position: relative; /* sit above the overlay */
+  position: relative; /* Keep the content above the overlay. */
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -383,8 +356,7 @@ a:hover { color: var(--accent-hover); }
   border: 1px solid rgba(213, 166, 106, 0.55);
 }
 
-/* 7. Layout sections & colourful page banners
-   -------------------------------------------------------------------------- */
+/* Shared page layouts and intro banners. */
 .section,
 .page-intro {
   max-width: var(--max-width);
@@ -392,7 +364,7 @@ a:hover { color: var(--accent-hover); }
   padding: 3.5rem var(--gutter);
 }
 
-/* Soft multicolour panel for alternate sections */
+/* Give alternate sections a little extra colour. */
 .section-alt {
   background: var(--alt-gradient);
   border-radius: var(--radius);
@@ -405,7 +377,7 @@ a:hover { color: var(--accent-hover); }
   font-size: 1.1rem;
 }
 
-/* Page intro = bold coloured banner with a dotted textile-style pattern */
+/* Page intros use a bold regional colour and a subtle pattern. */
 .page-intro {
   position: relative;
   margin-top: 2rem;
@@ -420,7 +392,7 @@ a:hover { color: var(--accent-hover); }
   overflow: hidden;
 }
 
-/* Wrap the page banner nicely inside the content width */
+/* Keep the intro banner within the page margins. */
 main > .page-intro { width: calc(100% - 2 * var(--gutter)); }
 
 .page-intro h1 {
@@ -449,7 +421,7 @@ main > .page-intro { width: calc(100% - 2 * var(--gutter)); }
 
 .page-intro .breadcrumb { color: rgba(255, 255, 255, 0.85); }
 
-/* Region banner image sits inside the coloured page intro */
+/* Keep the regional photo and its caption inside the intro banner. */
 .page-intro .region-banner figcaption { color: rgba(255, 255, 255, 0.9); }
 
 .two-col {
@@ -476,7 +448,7 @@ main > .page-intro { width: calc(100% - 2 * var(--gutter)); }
   color: var(--text-muted);
 }
 
-/* Trend articles (home page): each one a different colour */
+/* Each home-page trend gets its own accent colour. */
 .trend-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -510,8 +482,7 @@ body.dark-mode .trend h3 { color: var(--heading); }
   margin-bottom: 0.6rem;
 }
 
-/* 8. Cards
-   -------------------------------------------------------------------------- */
+/* Cards used across the site. */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -532,19 +503,19 @@ body.dark-mode .trend h3 { color: var(--heading); }
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Featured dish cards rotate through the palette */
+/* Featured dishes take turns using the accent colours. */
 .card-grid > .card:nth-child(4n + 1) { --card-color: var(--color-mango); }
 .card-grid > .card:nth-child(4n + 2) { --card-color: var(--color-majorelle); }
 .card-grid > .card:nth-child(4n + 3) { --card-color: var(--color-baobab); }
 .card-grid > .card:nth-child(4n + 4) { --card-color: var(--color-bougainvillea); }
 
-/* Region and recipe cards use their own region colour instead */
+/* Region and recipe cards use their region's colour instead. */
 .card-grid > .card.recipe-card,
 .card-grid > .card.region-card,
 .region-page .card-grid > .card,
 .region-link .card { --card-color: var(--region); }
 
-/* Hover lift animation */
+/* Lift the card slightly when someone hovers over it. */
 .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
@@ -555,7 +526,7 @@ body.dark-mode .trend h3 { color: var(--heading); }
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: var(--surface-alt); /* placeholder colour before image loads */
+  background: var(--surface-alt); /* A placeholder while the photo loads. */
   transition: transform 0.4s ease;
 }
 
@@ -563,7 +534,7 @@ body.dark-mode .trend h3 { color: var(--heading); }
 
 .card figcaption,
 .card .card-body {
-  position: relative; /* keeps text above the zoomed image */
+  position: relative; /* Keep the text above the zoomed image. */
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -605,7 +576,7 @@ body.dark-mode .card-link { color: var(--link); }
 
 body.dark-mode .card-countries { color: var(--text-muted); }
 
-/* Recipe card: figure holds the image + a region tag */
+/* Position the region tag over the recipe photo. */
 .recipe-card figure {
   position: relative;
   overflow: hidden;
@@ -635,8 +606,7 @@ body.dark-mode .card-countries { color: var(--text-muted); }
 
 .card-actions .card-link { margin-top: 0; }
 
-/* 9. Filter buttons & favorites
-   -------------------------------------------------------------------------- */
+/* Recipe filters and favorite buttons. */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -645,7 +615,7 @@ body.dark-mode .card-countries { color: var(--text-muted); }
   margin-bottom: 2rem;
 }
 
-/* Each filter button wears its region's colour ("all" uses the default red) */
+/* Each filter uses its region's colour; "all" uses the default. */
 .filter-btn {
   padding: 0.55rem 1.2rem;
   border: 2px solid var(--region);
@@ -664,7 +634,7 @@ body.dark-mode .filter-btn { color: var(--text); }
   transform: translateY(-2px);
 }
 
-/* Active filter */
+/* Make the selected filter easy to spot. */
 .filter-btn.active,
 body.dark-mode .filter-btn.active {
   background: var(--region-deep);
@@ -680,7 +650,7 @@ body.dark-mode .filter-btn.active {
   color: var(--text);
   font-weight: 700;
   cursor: pointer;
-  filter: grayscale(1); /* grey heart until favorited */
+  filter: grayscale(1); /* Keep the heart grey until it's selected. */
   transition: all 0.2s ease;
 }
 
@@ -689,7 +659,7 @@ body.dark-mode .filter-btn.active {
   border-color: var(--color-pepper);
 }
 
-/* Favorited: full-colour red heart with a little pop */
+/* Selected favorites get a warmer colour and a quick pop. */
 .favorite-btn.active {
   filter: none;
   background: linear-gradient(135deg, #FBEDE7, #F6E1D8);
@@ -707,8 +677,7 @@ body.dark-mode .favorite-btn.active {
   50% { transform: scale(1.12); }
 }
 
-/* 10. Recipe pages (ingredients, details/summary, tables)
-   -------------------------------------------------------------------------- */
+/* Recipe layouts, ingredients, steps, and nutrition. */
 .recipe {
   max-width: 56rem;
   margin: 0 auto;
@@ -717,7 +686,7 @@ body.dark-mode .favorite-btn.active {
 
 .recipe > section { margin-top: 2.75rem; }
 
-/* Coloured title banner in the dish's region colour */
+/* Give the recipe title a banner in its region's colour. */
 .recipe-header {
   display: flex;
   flex-wrap: wrap;
@@ -782,7 +751,7 @@ figcaption {
 
 .region-banner { margin-top: 1.5rem; }
 
-/* Quick facts strip: colourful chips */
+/* A colourful strip for the recipe's quick facts. */
 .recipe-facts ul {
   display: flex;
   flex-wrap: wrap;
@@ -807,7 +776,7 @@ figcaption {
   border-left: 5px solid var(--region);
 }
 
-/* Ingredients + scaler */
+/* Ingredients and the serving-size scaler. */
 .ingredients {
   padding: 1.75rem;
   background:
@@ -865,7 +834,7 @@ body.dark-mode .qty { color: var(--color-sun); }
   color: var(--text-muted);
 }
 
-/* Steps in <details> */
+/* Let readers expand each recipe's cooking steps. */
 details {
   background: var(--surface);
   border: 2px solid var(--border);
@@ -906,7 +875,7 @@ details ol li {
   padding: 0.6rem 0 0.6rem 2.75rem;
 }
 
-/* Step numbers cycle through the palette */
+/* Use a different accent colour for every few step numbers. */
 details ol li:nth-child(4n + 2) { --step: var(--color-mango); }
 details ol li:nth-child(4n + 3) { --step: var(--color-baobab); }
 details ol li:nth-child(4n + 4) { --step: var(--color-majorelle); }
@@ -927,7 +896,7 @@ details ol li::before {
   font-size: 0.9rem;
 }
 
-/* Nutrition table */
+/* Nutrition information in a simple table. */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -962,8 +931,7 @@ tbody th { font-weight: 600; }
 
 .recipe-map p { margin-bottom: 1rem; }
 
-/* 11. Regions (custom <mark>)
-   -------------------------------------------------------------------------- */
+/* Region-specific highlights. */
 mark {
   padding: 0 0.25em;
   border-radius: 0.25em;
@@ -973,7 +941,7 @@ mark {
   -webkit-box-decoration-break: clone;
 }
 
-/* Region pages: highlighter stroke in the region's own colour */
+/* On region pages, highlights pick up that region's colour. */
 .region-page mark {
   background: linear-gradient(transparent 55%, color-mix(in srgb, var(--region) 30%, transparent) 55%);
   border-bottom: 2px solid var(--region);
@@ -990,8 +958,7 @@ body.dark-mode .region-page mark {
   border-bottom-color: #fff;
 }
 
-/* 12. About (mission statement, credits)
-   -------------------------------------------------------------------------- */
+/* About page: mission, history, and photo credits. */
 .mission {
   position: relative;
   max-width: var(--max-width);
@@ -1016,7 +983,7 @@ body.dark-mode .region-page mark {
 }
 
 .mission blockquote::before {
-  content: "\201C"; /* opening quote mark */
+  content: "\201C"; /* Add an opening quote mark before the statement. */
   display: block;
   font-family: var(--font-heading);
   font-size: 4rem;
@@ -1079,8 +1046,7 @@ body.dark-mode .region-page mark {
   border-bottom: 1px dashed var(--border);
 }
 
-/* 13. Contact form
-   -------------------------------------------------------------------------- */
+/* Contact form and its layout. */
 .contact-layout {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -1132,7 +1098,7 @@ body.dark-mode .region-page mark {
 
 .contact-form textarea { resize: vertical; }
 
-/* Focus glow */
+/* Make the field being edited easier to see. */
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
@@ -1166,8 +1132,7 @@ body.dark-mode .form-error { color: #F0A89A; }
   font-weight: 700;
 }
 
-/* 14. Newsletter footer
-   -------------------------------------------------------------------------- */
+/* Newsletter signup and page footer. */
 .site-footer {
   position: relative;
   margin-top: 3rem;
@@ -1243,8 +1208,7 @@ body.dark-mode .form-error { color: #F0A89A; }
   opacity: 0.8;
 }
 
-/* 15. Responsive video & map wrappers (16:9)
-   -------------------------------------------------------------------------- */
+/* Keep video and map embeds at a 16:9 ratio. */
 .video-wrapper,
 .map-wrapper {
   position: relative;
@@ -1256,7 +1220,7 @@ body.dark-mode .form-error { color: #F0A89A; }
   box-shadow: var(--shadow);
 }
 
-/* Fallback for older browsers without aspect-ratio */
+/* Older browsers can use padding to keep the same proportions. */
 @supports not (aspect-ratio: 16 / 9) {
   .video-wrapper,
   .map-wrapper {
@@ -1279,11 +1243,10 @@ body.dark-mode .form-error { color: #F0A89A; }
   border: 0;
 }
 
-/* 16. Utilities
-   -------------------------------------------------------------------------- */
+/* Small helpers used around the site. */
 .hidden { display: none !important; }
 
-/* Hidden visually but still read by screen readers */
+/* Hide this visually, but leave it available to screen readers. */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1293,7 +1256,7 @@ body.dark-mode .form-error { color: #F0A89A; }
   white-space: nowrap;
 }
 
-/* Respect users who prefer less motion */
+/* Turn off animations for people who prefer reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1304,10 +1267,9 @@ body.dark-mode .form-error { color: #F0A89A; }
   }
 }
 
-/* 17. Responsive (tablet & phone)
-   -------------------------------------------------------------------------- */
+/* Adjust the layout for smaller screens. */
 
-/* Tablets */
+/* Tablet layout */
 @media (max-width: 900px) {
   .hero-inner,
   .history-layout,
@@ -1323,9 +1285,9 @@ body.dark-mode .form-error { color: #F0A89A; }
   }
 }
 
-/* Phones */
+/* Phone layout */
 @media (max-width: 640px) {
-  /* Mobile-friendly nav: name + toggle on top row, links wrap below */
+  /* Keep the site name and theme toggle above the wrapping nav links. */
   .site-header {
     flex-wrap: wrap;
     padding-block: 0.75rem;

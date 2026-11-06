@@ -68,11 +68,11 @@ All code is in `js/script.js`, loaded with `defer` on every page. Each feature i
 
 ```
 ├── index.html, recipes.html, regions.html, about.html, contact.html
-├── recipes/      # Individual recipe pages
-├── regions/      # Regional cuisine pages
+├── recipes/      # The pages for each recipe
+├── regions/      # The pages for each region
 ├── css/styles.css
 ├── js/script.js
-└── images/       # Dish, region and hero photos
+└── images/       # Photos used across the site
 ```
 
 ##  Running Locally

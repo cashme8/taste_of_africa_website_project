@@ -1,25 +1,10 @@
-/* ==========================================================================
-   Taste of Africa — Main Script
-   Description: Interactive features for the Taste of Africa website.
-   Vanilla JavaScript only. Loaded with "defer" on every page.
+/* Small interactions used across the site. */
 
-   Features (each checks that its elements exist before running):
-     1. Recipe filter       (recipes.html)
-     2. Favorites           (recipes.html + recipe pages)
-     3. Contact form        (contact.html)
-     4. Ingredient scaler   (recipe pages)
-     5. Dark mode toggle    (every page)
-     6. Newsletter signup   (every page footer)
-   ========================================================================== */
-
-/* localStorage keys */
+/* I use these keys to remember favorites and the chosen theme. */
 const FAVORITES_KEY = "toa-favorites";
 const THEME_KEY = "toa-theme";
 
-/* --------------------------------------------------------------------------
-   Safe localStorage helpers
-   (localStorage can throw in private mode or when storage is blocked)
-   -------------------------------------------------------------------------- */
+/* Storage can be blocked, so these helpers keep that from breaking the page. */
 function storageGet(key) {
   try {
     return localStorage.getItem(key);
@@ -32,15 +17,11 @@ function storageSet(key, value) {
   try {
     localStorage.setItem(key, value);
   } catch (error) {
-    // Storage unavailable: the feature still works, it just won't be remembered.
+    // If storage is blocked, the rest of the feature still works.
   }
 }
 
-/* --------------------------------------------------------------------------
-   1. Recipe filter
-   Clicking a .filter-btn shows only the .recipe-card elements whose
-   data-region matches (or all of them for "all").
-   -------------------------------------------------------------------------- */
+/* Show recipes from the selected region, or all of them. */
 function initRecipeFilter() {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const recipeCards = document.querySelectorAll(".recipe-card");
@@ -53,7 +34,7 @@ function initRecipeFilter() {
     button.addEventListener("click", () => {
       const region = button.dataset.region;
 
-      // Mark the clicked button as active
+      // Show which filter is selected.
       filterButtons.forEach((btn) => {
         btn.classList.remove("active");
         btn.setAttribute("aria-pressed", "false");
@@ -61,7 +42,7 @@ function initRecipeFilter() {
       button.classList.add("active");
       button.setAttribute("aria-pressed", "true");
 
-      // Show matching cards, hide the rest
+      // Keep matching cards visible and hide the rest.
       recipeCards.forEach((card) => {
         const matches = region === "all" || card.dataset.region === region;
         card.classList.toggle("hidden", !matches);
@@ -70,17 +51,13 @@ function initRecipeFilter() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   2. Favorites
-   Clicking a .favorite-btn toggles .active and saves/removes its data-id
-   in a localStorage array. Saved favorites are restored on page load.
-   -------------------------------------------------------------------------- */
+/* Save favorite dishes and restore them when the page loads. */
 function getFavorites() {
   try {
     const saved = JSON.parse(storageGet(FAVORITES_KEY));
     return Array.isArray(saved) ? saved : [];
   } catch (error) {
-    return []; // corrupted value: start fresh
+    return []; // If the saved value is unreadable, start with an empty list.
   }
 }
 
@@ -97,13 +74,13 @@ function initFavorites() {
   const favoriteButtons = document.querySelectorAll(".favorite-btn");
   if (favoriteButtons.length === 0) return;
 
-  // Restore saved favorites
+  // Bring back the favorites saved from an earlier visit.
   const favorites = getFavorites();
   favoriteButtons.forEach((button) => {
     setFavoriteState(button, favorites.includes(button.dataset.id));
   });
 
-  // Toggle on click
+  // Let each button add or remove its dish from the list.
   favoriteButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const id = button.dataset.id;
@@ -122,11 +99,7 @@ function initFavorites() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   3. Contact form validation
-   Message must be more than 20 characters. On success, hide the form and
-   show a personalised thank-you message.
-   -------------------------------------------------------------------------- */
+/* Check the contact form and show a thank-you when everything looks good. */
 function initContactForm() {
   const form = document.getElementById("contact-form");
   const errorBox = document.getElementById("form-error");
@@ -145,7 +118,7 @@ function initContactForm() {
     const email = emailInput.value.trim();
     const message = messageInput.value.trim();
 
-    // Check each rule and show the first problem found
+    // Show the first issue the visitor needs to fix.
     let error = "";
     if (name === "") {
       error = "Please enter your name.";
@@ -160,26 +133,22 @@ function initContactForm() {
       return;
     }
 
-    // Success: clear errors, hide form, show thank-you
+    // Clear the error, hide the form, and show a thank-you.
     errorBox.textContent = "";
     form.classList.add("hidden");
     successBox.textContent = `Thank you, ${name}! We've received your message.`;
     successBox.classList.remove("hidden");
   });
 
-  // Clear the error as soon as the user starts fixing it
+  // Clear the old error as soon as they start typing again.
   form.addEventListener("input", () => {
     errorBox.textContent = "";
   });
 }
 
-/* --------------------------------------------------------------------------
-   4. Ingredient scaler
-   new amount = data-qty × servings ÷ data-base-servings, rounded neatly.
-   -------------------------------------------------------------------------- */
+/* Update ingredient amounts when the serving count changes. */
 function formatQuantity(value) {
-  // Whole numbers stay whole; otherwise round to at most 2 decimals
-  // and drop trailing zeros (e.g. 1.50 -> 1.5, 0.333 -> 0.33).
+  // Keep whole numbers tidy and trim decimals to at most two places.
   const rounded = Math.round(value * 100) / 100;
   return Number.isInteger(rounded) ? String(rounded) : String(parseFloat(rounded.toFixed(2)));
 }
@@ -195,7 +164,7 @@ function initIngredientScaler() {
   function updateQuantities() {
     const servings = parseFloat(servingsInput.value);
 
-    // Ignore empty or invalid values while the user is still typing
+    // Leave the amounts alone while the input is empty or invalid.
     if (!servings || servings <= 0) return;
 
     quantities.forEach((qty) => {
@@ -208,10 +177,7 @@ function initIngredientScaler() {
   servingsInput.addEventListener("change", updateQuantities);
 }
 
-/* --------------------------------------------------------------------------
-   5. Dark mode toggle
-   #theme-toggle toggles body.dark-mode; the choice is saved and restored.
-   -------------------------------------------------------------------------- */
+/* Restore the saved theme and let the button switch between modes. */
 function applyTheme(isDark, toggleButton) {
   document.body.classList.toggle("dark-mode", isDark);
 
@@ -225,7 +191,7 @@ function applyTheme(isDark, toggleButton) {
 function initThemeToggle() {
   const toggleButton = document.getElementById("theme-toggle");
 
-  // Restore the saved theme (even if the button were missing)
+  // Apply the saved theme even if this page has no toggle button.
   applyTheme(storageGet(THEME_KEY) === "dark", toggleButton);
 
   if (!toggleButton) return;
@@ -237,10 +203,7 @@ function initThemeToggle() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   6. Newsletter signup
-   Prevents the page reload and shows a short thank-you message.
-   -------------------------------------------------------------------------- */
+/* Show a quick signup thank-you without reloading the page. */
 function initNewsletter() {
   const forms = document.querySelectorAll(".newsletter-form");
   if (forms.length === 0) return;
@@ -258,9 +221,7 @@ function initNewsletter() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   Start everything once the page has loaded
-   -------------------------------------------------------------------------- */
+/* Start each feature once the page is ready. */
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
   initRecipeFilter();
