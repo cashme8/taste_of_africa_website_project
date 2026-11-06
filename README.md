@@ -6,7 +6,7 @@ Built with **HTML5, CSS and vanilla JavaScript only**: no frameworks or librarie
 
 ## 🔗 Live Site
 
-**GitHub Pages:** _Coming soon — https://cashme8.github.io/taste_of_africa_website_project/ (link will be confirmed once deployed)_
+**GitHub Pages:** [https://cashme8.github.io/taste_of_africa_website_project/](https://cashme8.github.io/taste_of_africa_website_project/)
 
 ##  Features
 
@@ -125,3 +125,7 @@ Photos are saved in `images/` and come from free sources. Pexels photos are unde
 ## 🎬 Videos
 
 All videos are embedded from YouTube and belong to their creators: Tastes of Africa (African Australian), Cooking with Nkiru, CookingWithAlia, Mulu Cooks, Pants Down Aprons On, Unapologetic Nomads, Faith Afahaene, and Chad and Claire.
+
+## Note on Contributors
+
+This is my own project, and every commit in its history is under my account. The **claude** entry under Contributors is not another person: I used an AI coding assistant as a support tool, and it added an automatic co-author tag to a few early commit messages. Those tags have since been removed, but GitHub caches its contributor list, so the old entry may still show for a while.
